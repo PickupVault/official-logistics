@@ -674,7 +674,7 @@ body{
         </div>
         <div class="tl-body">
           <div class="tl-name">ได้รับข้อมูลคำขอแล้ว</div>
-          <div class="tl-desc">ระบบได้รับข้อมูลและเปิดความคุ้มครอง Escrow เรียบร้อย</div>
+          <div class="tl-desc">ระบบได้รับข้อมูลและเปิดความคุ้มครองเรียบร้อย</div>
         </div>
       </div>
       <!-- Step 2: Waiting -->
@@ -683,7 +683,7 @@ body{
           <svg viewBox="0 0 14 14" fill="none" width="8" height="8"><circle cx="7" cy="7" r="3" fill="#b45309"></circle></svg>
         </div>
         <div class="tl-body">
-          <div class="tl-name wait">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
+          <div class="tl-name wait">รอการตรวจสอบผู้ขาย</div>
           <div class="tl-desc">กรุณาคัดลอกข้อมูลด้านล่างและแจ้งแอดมิน</div>
         </div>
       </div>
@@ -759,12 +759,12 @@ body{
     <form id="bookingForm" onsubmit="event.preventDefault(); submitForm();">
       <!-- UPDATED field labels -->
       <div class="form-group">
-        <label class="form-label">ชื่อผู้ติดต่อ / ผู้ส่งมอบ <span class="req">*</span></label>
+        <label class="form-label">ชื่อผู้ติดต่อ <span class="req">*</span></label>
         <input type="text" class="form-input" id="inp-name" placeholder="ระบุชื่อ-นามสกุล" required="">
       </div>
 
       <div class="form-group">
-        <label class="form-label">เบอร์โทรศัพท์สำหรับเจ้าหน้าที่ติดต่อ <span class="req">*</span></label>
+        <label class="form-label">เบอร์โทรศัพท์ <span class="req">*</span></label>
         <input type="tel" class="form-input" id="inp-phone" placeholder="08x-xxx-xxxx" required="">
         <div class="err-msg" id="phoneErr">กรุณาระบุเบอร์โทรศัพท์ 10 หลักให้ถูกต้อง</div>
       </div>
@@ -800,13 +800,13 @@ body{
 
         <div class="addr-confirmed" id="addrConfirmed">
           <span class="addr-icon">✅</span>
-          <div class="addr-text">ตรวจสอบพื้นที่แล้ว: รองรับการเข้ารับสินค้า (Escrow Active)</div>
+          <div class="addr-text">ตรวจสอบพื้นที่แล้ว: รองรับการเข้ารับสินค้า</div>
         </div>
       </div>
 
       <!-- UPDATED note field label -->
       <div class="form-group">
-        <label class="form-label">หมายเหตุสำหรับเจ้าหน้าที่ (ถ้ามี)</label>
+        <label class="form-label">หมายเหตุเพิ่มเติม (ถ้ามี)</label>
         <input type="text" class="form-input" id="inp-note" placeholder="เช่น จุดสังเกต, ฝากไว้ที่ป้อมยาม, โทรหาเมื่อถึง">
       </div>
 
