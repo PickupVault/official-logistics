@@ -636,7 +636,7 @@ body{
     <div class="success-icon">✓</div>
     <!-- UPDATED title -->
     <h2 class="success-title">บันทึกนัดหมายสำเร็จ</h2>
-    <p class="success-desc">เจ้าหน้าที่รับทราบข้อมูลแล้ว กรุณาแจ้งยืนยันกับแอดมินอีกครั้งเพื่อเริ่มกระบวนการเข้ารับ
+    <p class="success-desc">เจ้าหน้าที่รับทราบข้อมูลแล้ว กรุณายืนยันกับแอดมินเพื่อเริ่มขั้นตอนเข้ารับบริการ
 
 </p>
 
@@ -673,7 +673,7 @@ body{
         </div>
         <div class="tl-body">
           <div class="tl-name">ได้รับข้อมูลคำขอแล้ว</div>
-          <div class="tl-desc">ระบบได้รับข้อมูลและเปิดความคุ้มครอง Escrow เรียบร้อย</div>
+          <div class="tl-desc">ระบบได้รับข้อมูลคำขอเข้ารับสินค้าเรียบร้อยแล้ว</div>
         </div>
       </div>
       <!-- Step 2: Waiting -->
@@ -682,8 +682,8 @@ body{
           <svg viewBox="0 0 14 14" fill="none" width="8" height="8"><circle cx="7" cy="7" r="3" fill="#b45309"></circle></svg>
         </div>
         <div class="tl-body">
-          <div class="tl-name wait">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
-          <div class="tl-desc">กรุณาคัดลอกข้อมูลด้านล่างและแจ้งแอดมิน</div>
+          <div class="tl-name wait">รอตรวจสอบข้อมูลผู้ขาย</div>
+          <div class="tl-desc">คัดลอกข้อมูลด้านล่าง แล้วส่งให้แอดมินเพื่อยืนยัน</div>
         </div>
       </div>
       <!-- Step 3: Pending -->
@@ -691,7 +691,7 @@ body{
         <div class="tl-icon pending"></div>
         <div class="tl-body">
           <div class="tl-name muted">เข้ารับสินค้าตามนัด</div>
-          <div class="tl-desc">ยืนยันตัวตนและยอดรายการ · ขนส่งเข้ารับสินค้าอย่างเป็นทางการ</div>
+          <div class="tl-desc">ยืนยันตัวตนและยอดรายการ เรียบร้อยแล้ว ขนส่งจะเข้ารับสินค้าตามเวลานัด</div>
         </div>
       </div>
     </div>
@@ -699,13 +699,13 @@ body{
 
   <div class="copy-card">
     <div class="copy-card-title">📋 แจ้งแอดมินเพื่อยืนยัน</div>
-    <div class="copy-card-desc">กดคัดลอกข้อมูลนัดหมาย จากนั้นนำไปวางในช่องทางที่แอดมินแจ้งไว้</div>
+    <div class="copy-card-desc">คัดลอกข้อมูล แล้วนำไปส่งให้แอดมินในแชท/div>
     <button class="copy-btn" id="copyBtn" onclick="copyBooking()">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
         <rect x="5" y="5" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
         <path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2" stroke="currentColor" stroke-width="1.5"></path>
       </svg>
-      <span id="copyBtnLabel">คัดลอกข้อมูลนัดหมาย</span>
+      <span id="copyBtnLabel">คัดลอกข้อมูล</span>
     </button>
     <!-- UPDATED: Admin contact button with dynamic ref -->
     <a id="adminBtn" href="https://official-logistics.github.io/PickupVault/#" class="admin-btn" onclick="openAdminChat(event)">
@@ -721,9 +721,9 @@ body{
     <div class="summary-title">สรุปข้อมูลการนัดหมาย</div>
     <div class="summary-row"><span class="summary-key">วันที่</span><span class="summary-val" id="sumDate">—</span></div>
     <div class="summary-row"><span class="summary-key">เวลา</span><span class="summary-val" id="sumTime">—</span></div>
-    <div class="summary-row"><span class="summary-key">ชื่อผู้ติดต่อ</span><span class="summary-val" id="sumName">—</span></div>
+    <div class="summary-row"><span class="summary-key">ชื่อ-นามสกุล</span><span class="summary-val" id="sumName">—</span></div>
     <div class="summary-row"><span class="summary-key">เบอร์ติดต่อ</span><span class="summary-val" id="sumPhone">—</span></div>
-    <div class="summary-row"><span class="summary-key">สถานที่รับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
+    <div class="summary-row"><span class="summary-key">ที่อยู่เข้ารับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
     <div class="summary-row" id="sumNoteRow" style="display:none"><span class="summary-key">หมายเหตุ</span><span class="summary-val" id="sumNote">—</span></div>
   </div>
 
@@ -732,7 +732,7 @@ body{
     <div class="warn-text">ระบบบันทึกข้อมูลไม่สำเร็จ (Network Error) กรุณาแคปหน้าจอนี้ส่งให้แอดมินเพื่อทำการนัดหมายด้วยตนเอง</div>
   </div>
 
-  <button class="new-btn" onclick="bookNew()">ทำการนัดหมายใหม่</button>
+  <button class="new-btn" onclick="bookNew()">ทำรายการนัดหมายใหม่</button>
 
   <!-- FOOTER (success page) -->
   <div class="page-footer" style="margin-top:24px">
@@ -758,7 +758,7 @@ body{
     <form id="bookingForm" onsubmit="event.preventDefault(); submitForm();">
       <!-- UPDATED field labels -->
       <div class="form-group">
-        <label class="form-label">ชื่อผู้ติดต่อ / ผู้ส่งมอบ <span class="req">*</span></label>
+        <label class="form-label">ชื่อ-นามสกุล<span class="req">*</span></label>
         <input type="text" class="form-input" id="inp-name" placeholder="ระบุชื่อ-นามสกุล" required="">
       </div>
 
@@ -769,7 +769,7 @@ body{
       </div>
 
       <div class="form-group">
-        <label class="form-label">สถานที่เข้ารับสินค้า (ต้นทาง) <span class="req">*</span></label>
+        <label class="form-label">ที่อยู่เข้ารับสินค้า<span class="req">*</span></label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
           <div>
             <div class="form-hint">จังหวัด</div>
