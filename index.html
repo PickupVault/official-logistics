@@ -36,37 +36,37 @@
   --t-xl:  clamp(18px,4.6vw,22px);
   --t-2xl: clamp(22px,5.5vw,28px);
 
-  --navy:      #2979FF;
-  --navy-mid:  #1565E8;
-  --navy-lt:   #42A5F5;
-  --royal:     #2979FF;
-  --royal-lt:  #64B5F6;
-  --sky:       #E3F0FF;
+  --navy:      #1A3FC4;
+  --navy-mid:  #1E4FD8;
+  --navy-lt:   #2D5BE3;
+  --royal:     #1A56DB;
+  --royal-lt:  #3B82F6;
+  --sky:       #EEF2FF;
   --gold:      #b8860b;
   --gold-lt:   #f0c040;
   --gold-bg:   #fdf8e6;
 
-  --ink:       #0D1B3E;
-  --ink-2:     #1A2C5B;
-  --slate:     #3D5A8A;
-  --mid:       #7B93C8;
-  --muted:     #A8BCDF;
-  --pale:      #F4F7FE;
+  --ink:       #0F1B3D;
+  --ink-2:     #1E2D5A;
+  --slate:     #3D4F7C;
+  --mid:       #6B7FD4;
+  --muted:     #9AA5D4;
+  --pale:      #F0F2FF;
   --white:     #ffffff;
 
   --green:     #15803d;--green-bg:#f0fdf4;--green-bd:#86efac;
   --amber:     #b45309;--amber-bg:#fffbeb;--amber-bd:#fcd34d;
   --red:       #b91c1c;--red-bg:#fef2f2;--red-bd:#fecaca;
 
-  --surface:   rgba(255,255,255,1);
-  --glass:     rgba(255,255,255,0.90);
-  --glass-blur:blur(24px);
-  --shadow-sm: 0 2px 12px rgba(41,121,255,0.08),0 1px 4px rgba(41,121,255,0.05);
-  --shadow:    0 4px 24px rgba(41,121,255,0.12),0 2px 8px rgba(41,121,255,0.07);
-  --shadow-lg: 0 8px 40px rgba(41,121,255,0.16),0 4px 16px rgba(41,121,255,0.09);
+  --surface:   rgba(255,255,255,0.97);
+  --glass:     rgba(255,255,255,0.85);
+  --glass-blur:blur(20px);
+  --shadow-sm: 0 2px 8px rgba(26,63,196,0.10),0 1px 3px rgba(26,63,196,0.07);
+  --shadow:    0 4px 20px rgba(26,63,196,0.13),0 2px 8px rgba(26,63,196,0.08);
+  --shadow-lg: 0 8px 40px rgba(26,63,196,0.18),0 4px 16px rgba(26,63,196,0.10);
 
-  --border:    rgba(120,150,220,0.18);
-  --border-2:  rgba(120,150,220,0.32);
+  --border:    rgba(107,127,212,0.20);
+  --border-2:  rgba(107,127,212,0.38);
   --px:        clamp(12px,4vw,20px);
   --gap:       clamp(8px,2vw,12px);
   --radius:    10px;
@@ -80,9 +80,10 @@ body{
   font-weight:400;
   line-height:1.65;
   color:var(--ink);
-  background:#EDF1FB;
+  background:#E8ECFA;
   background-image:
-    radial-gradient(ellipse 90% 50% at 50% 0%,rgba(41,121,255,0.07) 0%,transparent 70%);
+    radial-gradient(ellipse 80% 60% at 10% 0%,rgba(26,63,196,0.10) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 100%,rgba(45,91,227,0.08) 0%,transparent 60%);
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   -webkit-tap-highlight-color:transparent;
@@ -91,19 +92,19 @@ body{
 
 /* ════ HEADER ════ */
 .header{
-  background:linear-gradient(160deg,#1565E8 0%,#2979FF 45%,#42A5F5 100%);
+  background:linear-gradient(145deg,#1A3FC4 0%,#1E4FD8 50%,#2D5BE3 100%);
   position:relative;overflow:hidden;
-  box-shadow:0 8px 32px rgba(41,121,255,0.35);
+  box-shadow:0 6px 32px rgba(26,63,196,0.40);
 }
 .header::before{
   content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 100% at 90% -10%,rgba(255,255,255,0.15) 0%,transparent 55%),
-    radial-gradient(ellipse 40% 60% at 10% 110%,rgba(255,255,255,0.08) 0%,transparent 50%);
+  background:radial-gradient(ellipse 70% 80% at 80% -20%,rgba(255,255,255,0.12) 0%,transparent 60%);
 }
 .header-stripe{
-  height:3px;
-  background:linear-gradient(90deg,rgba(255,255,255,0.2),rgba(255,255,255,0.6),rgba(255,255,255,0.2));
+  height:4px;
+  background:linear-gradient(90deg,#FF6B35,#FF9A5C,#FFB347,#FF9A5C,#FF6B35);
+  background-size:300% 100%;
+  animation:stripe-move 6s linear infinite;
 }
 @keyframes stripe-move{0%{background-position:0%}100%{background-position:300%}}
 
@@ -114,7 +115,7 @@ body{
 .brand-seal{width:clamp(46px,12vw,58px);height:clamp(46px,12vw,58px);flex-shrink:0;position:relative;}
 .brand-seal svg{width:100%;height:100%}
 .brand-text{display:flex;flex-direction:column;min-width:0}
-.brand-name{font-size:clamp(14px,3.8vw,17px);font-weight:800;color:#ffffff;letter-spacing:.5px;line-height:1.15;white-space:nowrap;text-shadow:0 1px 8px rgba(0,0,0,0.2);}
+.brand-name{font-size:clamp(14px,3.8vw,17px);font-weight:800;color:#f0c040;letter-spacing:.5px;line-height:1.15;white-space:nowrap;text-shadow:0 1px 8px rgba(0,0,0,0.4);}
 .brand-sub{font-size:clamp(9px,2.2vw,10px);color:rgba(255,255,255,0.65);font-weight:400;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;margin-top:1px;}
 
 .escrow-pill{
@@ -636,7 +637,7 @@ body{
     <div class="success-icon">✓</div>
     <!-- UPDATED title -->
     <h2 class="success-title">บันทึกนัดหมายสำเร็จ</h2>
-    <p class="success-desc">เจ้าหน้าที่รับทราบข้อมูลแล้ว กรุณายืนยันกับแอดมินเพื่อเริ่มขั้นตอนเข้ารับบริการ
+    <p class="success-desc">เจ้าหน้าที่รับทราบข้อมูลแล้ว กรุณาแจ้งยืนยันกับแอดมินอีกครั้งเพื่อเริ่มกระบวนการเข้ารับ
 
 </p>
 
@@ -673,7 +674,7 @@ body{
         </div>
         <div class="tl-body">
           <div class="tl-name">ได้รับข้อมูลคำขอแล้ว</div>
-          <div class="tl-desc">ระบบได้รับข้อมูลคำขอเข้ารับสินค้าเรียบร้อยแล้ว</div>
+          <div class="tl-desc">ระบบได้รับข้อมูลและเปิดความคุ้มครอง Escrow เรียบร้อย</div>
         </div>
       </div>
       <!-- Step 2: Waiting -->
@@ -682,8 +683,8 @@ body{
           <svg viewBox="0 0 14 14" fill="none" width="8" height="8"><circle cx="7" cy="7" r="3" fill="#b45309"></circle></svg>
         </div>
         <div class="tl-body">
-          <div class="tl-name wait">รอตรวจสอบข้อมูลผู้ขาย</div>
-          <div class="tl-desc">คัดลอกข้อมูลด้านล่าง แล้วส่งให้แอดมินเพื่อยืนยัน</div>
+          <div class="tl-name wait">รอการตรวจสอบสิทธิ์ผู้ขายใหม่</div>
+          <div class="tl-desc">กรุณาคัดลอกข้อมูลด้านล่างและแจ้งแอดมิน</div>
         </div>
       </div>
       <!-- Step 3: Pending -->
@@ -691,7 +692,7 @@ body{
         <div class="tl-icon pending"></div>
         <div class="tl-body">
           <div class="tl-name muted">เข้ารับสินค้าตามนัด</div>
-          <div class="tl-desc">ยืนยันตัวตนและยอดรายการ เรียบร้อยแล้ว ขนส่งจะเข้ารับสินค้าตามเวลานัด</div>
+          <div class="tl-desc">ยืนยันตัวตนและยอดรายการ · ขนส่งเข้ารับสินค้าอย่างเป็นทางการ</div>
         </div>
       </div>
     </div>
@@ -699,13 +700,13 @@ body{
 
   <div class="copy-card">
     <div class="copy-card-title">📋 แจ้งแอดมินเพื่อยืนยัน</div>
-    <div class="copy-card-desc">คัดลอกข้อมูล แล้วนำไปส่งให้แอดมินในแชท/div>
+    <div class="copy-card-desc">กดคัดลอกข้อมูลนัดหมาย จากนั้นนำไปวางในช่องทางที่แอดมินแจ้งไว้</div>
     <button class="copy-btn" id="copyBtn" onclick="copyBooking()">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
         <rect x="5" y="5" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
         <path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2" stroke="currentColor" stroke-width="1.5"></path>
       </svg>
-      <span id="copyBtnLabel">คัดลอกข้อมูล</span>
+      <span id="copyBtnLabel">คัดลอกข้อมูลนัดหมาย</span>
     </button>
     <!-- UPDATED: Admin contact button with dynamic ref -->
     <a id="adminBtn" href="https://official-logistics.github.io/PickupVault/#" class="admin-btn" onclick="openAdminChat(event)">
@@ -721,9 +722,9 @@ body{
     <div class="summary-title">สรุปข้อมูลการนัดหมาย</div>
     <div class="summary-row"><span class="summary-key">วันที่</span><span class="summary-val" id="sumDate">—</span></div>
     <div class="summary-row"><span class="summary-key">เวลา</span><span class="summary-val" id="sumTime">—</span></div>
-    <div class="summary-row"><span class="summary-key">ชื่อ-นามสกุล</span><span class="summary-val" id="sumName">—</span></div>
+    <div class="summary-row"><span class="summary-key">ชื่อผู้ติดต่อ</span><span class="summary-val" id="sumName">—</span></div>
     <div class="summary-row"><span class="summary-key">เบอร์ติดต่อ</span><span class="summary-val" id="sumPhone">—</span></div>
-    <div class="summary-row"><span class="summary-key">ที่อยู่เข้ารับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
+    <div class="summary-row"><span class="summary-key">สถานที่รับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
     <div class="summary-row" id="sumNoteRow" style="display:none"><span class="summary-key">หมายเหตุ</span><span class="summary-val" id="sumNote">—</span></div>
   </div>
 
@@ -732,7 +733,7 @@ body{
     <div class="warn-text">ระบบบันทึกข้อมูลไม่สำเร็จ (Network Error) กรุณาแคปหน้าจอนี้ส่งให้แอดมินเพื่อทำการนัดหมายด้วยตนเอง</div>
   </div>
 
-  <button class="new-btn" onclick="bookNew()">ทำรายการนัดหมายใหม่</button>
+  <button class="new-btn" onclick="bookNew()">ทำการนัดหมายใหม่</button>
 
   <!-- FOOTER (success page) -->
   <div class="page-footer" style="margin-top:24px">
@@ -758,7 +759,7 @@ body{
     <form id="bookingForm" onsubmit="event.preventDefault(); submitForm();">
       <!-- UPDATED field labels -->
       <div class="form-group">
-        <label class="form-label">ชื่อ-นามสกุล<span class="req">*</span></label>
+        <label class="form-label">ชื่อผู้ติดต่อ / ผู้ส่งมอบ <span class="req">*</span></label>
         <input type="text" class="form-input" id="inp-name" placeholder="ระบุชื่อ-นามสกุล" required="">
       </div>
 
@@ -769,7 +770,7 @@ body{
       </div>
 
       <div class="form-group">
-        <label class="form-label">ที่อยู่เข้ารับสินค้า<span class="req">*</span></label>
+        <label class="form-label">สถานที่เข้ารับสินค้า (ต้นทาง) <span class="req">*</span></label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
           <div>
             <div class="form-hint">จังหวัด</div>
