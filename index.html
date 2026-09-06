@@ -722,9 +722,9 @@ body{
     <div class="summary-title">สรุปข้อมูลการนัดหมาย</div>
     <div class="summary-row"><span class="summary-key">วันที่</span><span class="summary-val" id="sumDate">—</span></div>
     <div class="summary-row"><span class="summary-key">เวลา</span><span class="summary-val" id="sumTime">—</span></div>
-    <div class="summary-row"><span class="summary-key">ชื่อผู้ติดต่อ</span><span class="summary-val" id="sumName">—</span></div>
-    <div class="summary-row"><span class="summary-key">เบอร์ติดต่อ</span><span class="summary-val" id="sumPhone">—</span></div>
-    <div class="summary-row"><span class="summary-key">สถานที่รับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
+    <div class="summary-row"><span class="summary-key">ชื่อ-นามสกุล</span><span class="summary-val" id="sumName">—</span></div>
+    <div class="summary-row"><span class="summary-key">เบอร์โทรศัพท์</span><span class="summary-val" id="sumPhone">—</span></div>
+    <div class="summary-row"><span class="summary-key">ที่อยู่เข้ารับสินค้า</span><span class="summary-val" id="sumAddr">—</span></div>
     <div class="summary-row" id="sumNoteRow" style="display:none"><span class="summary-key">หมายเหตุ</span><span class="summary-val" id="sumNote">—</span></div>
   </div>
 
@@ -733,11 +733,11 @@ body{
     <div class="warn-text">ระบบบันทึกข้อมูลไม่สำเร็จ (Network Error) กรุณาแคปหน้าจอนี้ส่งให้แอดมินเพื่อทำการนัดหมายด้วยตนเอง</div>
   </div>
 
-  <button class="new-btn" onclick="bookNew()">ทำการนัดหมายใหม่</button>
+  <button class="new-btn" onclick="bookNew()">นัดหมายใหม่</button>
 
   <!-- FOOTER (success page) -->
   <div class="page-footer" style="margin-top:24px">
-    <div class="footer-line1">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
+    <div class="footer-line1">ดูแลการส่งมอบอย่างปลอดภัย พร้อมรับประกันตลอดการขนส่ง</div>
     <div class="footer-line2">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
   </div>
 </div>
@@ -747,7 +747,7 @@ body{
   <div class="modal-content">
     <div class="modal-head">
       <!-- UPDATED modal title -->
-      <h2 class="modal-title">ระบุรายละเอียดการรับสินค้า</h2>
+      <h2 class="modal-title">ระบุรายละเอียดการเข้ารับสินค้า</h2>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
 
@@ -759,8 +759,8 @@ body{
     <form id="bookingForm" onsubmit="event.preventDefault(); submitForm();">
       <!-- UPDATED field labels -->
       <div class="form-group">
-        <label class="form-label">ชื่อผู้ติดต่อ <span class="req">*</span></label>
-        <input type="text" class="form-input" id="inp-name" placeholder="ระบุชื่อ-นามสกุล" required="">
+        <label class="form-label">ชื่อ-นามสกุล <span class="req">*</span></label>
+        <input type="text" class="form-input" id="inp-name" placeholder="กรอกชื่อ-นามสกุล" required="">
       </div>
 
       <div class="form-group">
@@ -770,7 +770,7 @@ body{
       </div>
 
       <div class="form-group">
-        <label class="form-label">สถานที่เข้ารับสินค้า (ต้นทาง) <span class="req">*</span></label>
+        <label class="form-label">ที่อยู่เข้ารับสินค้า <span class="req">*</span></label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
           <div>
             <div class="form-hint">จังหวัด</div>
@@ -807,7 +807,7 @@ body{
       <!-- UPDATED note field label -->
       <div class="form-group">
         <label class="form-label">หมายเหตุเพิ่มเติม (ถ้ามี)</label>
-        <input type="text" class="form-input" id="inp-note" placeholder="เช่น จุดสังเกต, ฝากไว้ที่ป้อมยาม, โทรหาเมื่อถึง">
+        <input type="text" class="form-input" id="inp-note" placeholder="เช่น จุดสังเกต, โทรหาก่อนถึง">
       </div>
 
       <!-- UPDATED submit button text -->
@@ -816,7 +816,7 @@ body{
 
     <!-- FOOTER (modal) -->
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center">
-      <div class="footer-line1" style="font-size:11px">ดูแลการส่งมอบสินค้าอย่างเป็นระบบ พร้อมประกันความคุ้มครองตลอดเส้นทาง</div>
+      <div class="footer-line1" style="font-size:11px">ดูแลการส่งมอบอย่างปลอดภัย พร้อมรับประกันตลอดการขนส่ง</div>
       <div class="footer-line2" style="font-size:10px">ข้อมูลของท่านจะถูกจัดเก็บตามนโยบายความเป็นส่วนตัวและมาตรฐานความปลอดภัยของ <span class="footer-brand">PickupVault</span></div>
     </div>
   </div>
