@@ -8740,7 +8740,7 @@ async function submitForm() {
 
   const now  = new Date();
   const mmdd = String(now.getMonth() + 1).padStart(2, '0') + String(now.getDate()).padStart(2, '0');
-  const ref  = 'GDT-' + mmdd + '-' + Date.now().toString(36).slice(-4).toUpperCase();
+  const ref  = 'MHM–' + mmdd + '-' + Date.now().toString(36).slice(-4).toUpperCase();
   currentRefNum = ref; /* store globally for admin button */
 
   const monthNames = [APRIL_MN, MAY_MN, OCT_MN, NOV_MN, DEC_MN];
